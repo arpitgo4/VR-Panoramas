@@ -7,7 +7,7 @@ import AFrame from 'aframe';
 import VRPanoramaUI from '../../presentationals/VRPanorama/VRPanoramaUI';
 import LoaderUI from '../../presentationals/Loader/LoaderUI.component';
 
-import { fetchGallery } from '../../../action-creators/panorama.actionCreator';
+import { fetchGallery, gotoGallery } from '../../../action-creators/panorama.actionCreator';
 
 class VRPanorama extends Component {
 
@@ -15,6 +15,10 @@ class VRPanorama extends Component {
         const { pano, is_loading } = this.props;
 
         return is_loading ? <LoaderUI /> : <VRPanoramaUI pano={pano} />;
+    }
+
+    componentDidUpdate() {
+        this.props.gotoGallery();
     }
 
     componentDidMount() {
@@ -37,7 +41,8 @@ const mapStateToProps = ({ gallery, misc }, { params }) => {
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-        fetchGallery
+        fetchGallery,
+        gotoGallery
     }, dispatch);
 };
 

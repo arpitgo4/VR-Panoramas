@@ -1,4 +1,4 @@
-
+import { browserHistory } from 'react-router';
 
 const fetchingImages = () => {
     return {
@@ -19,7 +19,7 @@ const saveImages = images => {
     };
 };
 
-const shouldFetchGallery = ({ gallery }) => gallery.length === 0;
+const shouldFetchImages = ({ gallery }) => gallery.length === 0;
 
 const callMockAPI = () => {
     return new Promise((resolve, reject) => {
@@ -33,7 +33,7 @@ const callMockAPI = () => {
 export const fetchGallery = () => {
     return (dispatch, getState) => {
 
-        if(shouldFetchGallery(getState())) {
+        if(shouldFetchImages(getState())) {
             dispatch(fetchingImages());
 
             callMockAPI()
@@ -45,3 +45,5 @@ export const fetchGallery = () => {
         }
     }
 };
+
+export const gotoGallery = () => browserHistory.push('/');
