@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router';
-
 import AFrame from 'aframe';
 
 import VRPanoramaUI from '../../presentationals/VRPanorama/VRPanoramaUI';
+import LoaderUI from '../../presentationals/Loader/LoaderUI.component';
 
 import { fetchGallery } from '../../../action-creators/panorama.actionCreator';
-import LoaderUI from '../../presentationals/Loader/LoaderUI.component';
 
 class VRPanorama extends Component {
 

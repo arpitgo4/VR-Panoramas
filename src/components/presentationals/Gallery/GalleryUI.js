@@ -8,13 +8,15 @@ const GalleryUI = ({
     gallery
 }) => (
     <div styleName="gallery-wrapper">
+        <div styleName="image-wrapper">
         {gallery.map(image => (
             <Link to={`/${image.name}`}
-                key={image.name} styleName="image-wrapper">
+                key={image.name} styleName="image">
                 <img src={image.pano} />
                 <p>{image.name}</p>
             </Link>
         ))}
+        </div>
     </div>
 );
 

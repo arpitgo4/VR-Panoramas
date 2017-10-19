@@ -30,14 +30,9 @@ $spin-time: .8s;
         animation: rotate-loader $spin-time linear infinite;
 
         @keyframes rotate-loader {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+            from {transform: rotate(0deg);}
+            to {transform: rotate(360deg);}
         }
     }
-
 }
 
