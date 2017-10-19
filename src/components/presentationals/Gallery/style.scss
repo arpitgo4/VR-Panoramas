@@ -4,8 +4,8 @@
 
     .image-wrapper {
         display: inline-block;
+        margin: 10px;
         vertical-align: top;
-        margin: 20px;
         border: 2px solid #eee;
         
         &:hover {
@@ -17,8 +17,8 @@
         }
 
         & img {
-            width: 500px;
-            height: auto;
+            width: 400px;
+            height: 200px;
         }
 
         & p {
