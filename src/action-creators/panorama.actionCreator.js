@@ -1,15 +1,15 @@
 
 
-const shouldFetchImages = ({ gallery }) => gallery.length === 0;
+const shouldFetchGallery = ({ gallery }) => gallery.length === 0;
 
-export const fetchImages = () => {
+export const fetchGallery = () => {
     return (dispatch, getState) => {
 
         dispatch({
             type: 'FETCHING_IMAGES'
         });
 
-        if(shouldFetchImages(getState())) {
+        if(shouldFetchGallery(getState())) {
             fetch('https://demo0813639.mockable.io/getPanos')
             .then(res => res.json())
             .then(json => {

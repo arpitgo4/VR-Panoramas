@@ -1,0 +1,26 @@
+
+.gallery-wrapper {
+    user-select: none;
+
+    .image-wrapper {
+        display: inline-block;
+        margin: 20px;
+        border: 2px solid #eee;
+        
+        &:hover {
+            cursor: pointer;
+        }
+
+        & img {
+            width: 500px;
+            height: auto;
+        }
+
+        & p {
+            font-size: 22px;
+            color: #777;
+            text-align: center;
+        }
+    }
+
+}
