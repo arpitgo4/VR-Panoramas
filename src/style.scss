@@ -7,3 +7,10 @@ html, body, #react-app {
 	height: 100%;
 	font-family: 'sans-serif';
 }
+
+a {
+	text-decoration: none;
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+}

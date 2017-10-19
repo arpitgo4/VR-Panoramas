@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router';
 
+import AFrame from 'aframe';
+
 import VRPanoramaUI from '../../presentationals/VRPanorama/VRPanoramaUI';
 
 class VRPanorama extends Component {
@@ -10,7 +12,7 @@ class VRPanorama extends Component {
     render() {
         const pano = this.props.pano;
 
-        return <VRPanoramaUI />;
+        return <VRPanoramaUI pano={pano} />;
     }
 }
 
