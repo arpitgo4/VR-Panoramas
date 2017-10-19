@@ -10,7 +10,7 @@ export const fetchGallery = () => {
         });
 
         if(shouldFetchGallery(getState())) {
-            fetch('https://demo0813639.mockable.io/getPanos')
+            fetch('http://demo3675774.mockable.io/vr/panos')
             .then(res => res.json())
             .then(json => {
                 dispatch({
