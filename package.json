@@ -27,6 +27,7 @@
   ],
   "author": "Arpit Goyal <arpit.go4@gmail.com> (http://github.com/arpitgo4)",
   "dependencies": {
+    "aframe": "^0.7.1",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.0.20",
     "babel-eslint": "^4.1.3",
