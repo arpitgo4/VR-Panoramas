@@ -1,0 +1,43 @@
+
+$loader-color: #22313f;
+$loader-bg-color: #ccc;
+
+$loader-width: 90px;
+$loader-thickness: $loader-width / 10;
+$loader-height: $loader-width;
+$spin-time: .8s;
+
+.loader-wrapper {
+    position: relative;
+    height: 100vh;
+    margin: 0 auto;
+
+    .loader {
+        z-index: 999;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -$loader-width / 2;
+        margin-top: -$loader-height / 2;
+        width: $loader-width;
+        height: $loader-height;
+        border: $loader-thickness solid $loader-color;
+        border-radius: 50%;
+
+        border-left-color: $loader-bg-color;
+        border-right-color: $loader-bg-color;
+        border-bottom-color: $loader-bg-color;
+        animation: rotate-loader $spin-time linear infinite;
+
+        @keyframes rotate-loader {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+}
+

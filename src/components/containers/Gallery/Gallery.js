@@ -3,16 +3,17 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import GalleryUI from '../../presentationals/Gallery/GalleryUI';
+import LoaderUI from '../../presentationals/Loader/LoaderUI.component';
 
 import { fetchGallery } from '../../../action-creators/panorama.actionCreator';
 
 class Gallery extends Component {
 
     render() {
-        const { gallery } = this.props;
+        const { gallery, is_loading } = this.props;
 
         return (
-            <GalleryUI gallery={gallery}/>
+            is_loading ? <LoaderUI /> : <GalleryUI gallery={gallery}/>
         );
     }
 
@@ -22,9 +23,11 @@ class Gallery extends Component {
     
 }
 
-const mapStateToProps = ({ gallery }) => {
+const mapStateToProps = ({ gallery, misc }) => {
+    const { is_loading } = misc;
     return {
-        gallery
+        gallery,
+        is_loading
     };
 };
 

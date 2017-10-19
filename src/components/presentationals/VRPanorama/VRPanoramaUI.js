@@ -4,7 +4,7 @@ import CSSModules from 'react-css-modules';
 import styles from './style.scss';
 
 const VRPanoramaUI = ({
-    pano
+    pano = {}
 }) => (
     <a-scene>
         <a-sky src={pano.pano} rotation="0 -130 0"></a-sky>

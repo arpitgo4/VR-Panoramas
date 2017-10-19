@@ -7,27 +7,39 @@ import AFrame from 'aframe';
 
 import VRPanoramaUI from '../../presentationals/VRPanorama/VRPanoramaUI';
 
+import { fetchGallery } from '../../../action-creators/panorama.actionCreator';
+import LoaderUI from '../../presentationals/Loader/LoaderUI.component';
+
 class VRPanorama extends Component {
 
     render() {
-        const pano = this.props.pano;
+        const { pano, is_loading } = this.props;
 
-        return <VRPanoramaUI pano={pano} />;
+        return is_loading ? <LoaderUI /> : <VRPanoramaUI pano={pano} />;
     }
+
+    componentDidMount() {
+        this.props.fetchGallery();
+    }
+    
 }
 
-const mapStateToProps = ({ gallery }, { params }) => {
+const mapStateToProps = ({ gallery, misc }, { params }) => {
+    const { is_loading } = misc;
     let pano = null;
     if(params.name)
         pano = gallery.find(image => image.name === params.name);
 
     return {
-        pano
+        pano,
+        is_loading
     };
 };
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({}, dispatch);
+    return bindActionCreators({
+        fetchGallery
+    }, dispatch);
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(VRPanorama));
