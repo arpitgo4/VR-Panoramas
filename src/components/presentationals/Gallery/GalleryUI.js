@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import CSSModules from 'react-css-modules';
 
 import styles from './style.scss';
@@ -8,10 +9,10 @@ const GalleryUI = ({
 }) => (
     <div styleName="gallery-wrapper">
         {gallery.map(image => (
-            <div styleName="image-wrapper">
+            <Link to={`/${image.name}`} styleName="image-wrapper">
                 <img src={image.pano} />
                 <p>{image.name}</p>
-            </div>
+            </Link>
         ))}
     </div>
 );

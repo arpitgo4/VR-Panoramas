@@ -4,11 +4,16 @@
 
     .image-wrapper {
         display: inline-block;
+        vertical-align: top;
         margin: 20px;
         border: 2px solid #eee;
         
         &:hover {
             cursor: pointer;
+            box-shadow: 1px 1px 5px 0px rgba(204,204,204,1);
+            & p {
+                color: black;
+            }
         }
 
         & img {
