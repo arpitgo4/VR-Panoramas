@@ -23,7 +23,7 @@ const shouldFetchImages = ({ gallery }) => gallery.length === 0;
 
 const callMockAPI = () => {
     return new Promise((resolve, reject) => {
-        fetch('http://demo3675774.mockable.io/vr/panos')
+        fetch('https://demo3675774.mockable.io/vr/panos')
         .then(res => res.json())
         .then(images => resolve(images))
         .catch(reject);
