@@ -3,8 +3,6 @@ import CSSModules from 'react-css-modules';
 
 import styles from './style.scss';
 
-console.log(park);
-
 const VRPanoramaUI = ({
     pano
 }) => (

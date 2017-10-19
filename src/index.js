@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import 'font-awesome/css/font-awesome.css';
+//import 'font-awesome/css/font-awesome.css';
 
 import './index.html';
 import './style.scss';
